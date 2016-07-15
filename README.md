@@ -10,7 +10,7 @@ Requires agent based ssh access to all hosts.
 
 ```sh
 go get github.com/lytics/skewer
-./skewer -hosts=host1,host2,host3,hostn
+skewer -hosts=host1,host2,host3,hostn
 ```
 
 ### Running remotely
@@ -28,6 +28,17 @@ ssh -A remotehost
 Host remotehost
     ForwardAgent yes
 ```
+
+### Alerting
+
+Use the `-alert` option to set a command to run (should be a shell script or
+single binary) if clock skew is detected.
+
+```sh
+skewer -hosts=... -alert=/path/to/alert.sh
+```
+
+The `$MAXSKEW` environment variable will be set to the maximum skew detected.
 
 ## How It Works
 
