@@ -52,3 +52,9 @@ Everything is in seconds resolution, so only skews of 2 seconds or greater will
 be reported.
 
 If you want subsecond skew detection you need a more sophisticated tool.
+
+## How It Doesn't Work
+
+Probably a lot of ways. Consider this a toy.
+
+There's a lot of `log.Fatalf` instead of more sophisticated error handling.
